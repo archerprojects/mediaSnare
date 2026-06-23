@@ -1,0 +1,32 @@
+# Rust
+/target/
+
+# Meson
+/_build/
+/builddir/
+/subprojects/
+
+# Deb output
+/dist/
+*.deb
+
+# Built binary
+/mediasnare
+
+# Editor
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# GResource compiled
+*.gresource
+
+# Archives
+*.tar.gz
+*.zip

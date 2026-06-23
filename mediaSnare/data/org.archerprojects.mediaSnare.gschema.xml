@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.archerprojects.mediaSnare" path="/org/archerprojects/mediaSnare/">
+
+    <key name="image-directory" type="s">
+      <default>''</default>
+      <summary>Image save directory</summary>
+      <description>Empty string uses ~/Pictures</description>
+    </key>
+
+    <key name="video-directory" type="s">
+      <default>''</default>
+      <summary>Video save directory</summary>
+      <description>Empty string uses ~/Videos</description>
+    </key>
+
+    <key name="audio-directory" type="s">
+      <default>''</default>
+      <summary>Audio save directory</summary>
+      <description>Empty string uses ~/Music</description>
+    </key>
+
+    <key name="image-format" type="s">
+      <choices>
+        <choice value="png"/>
+        <choice value="jpg"/>
+        <choice value="webp"/>
+      </choices>
+      <default>'png'</default>
+      <summary>Default image output format</summary>
+    </key>
+
+    <key name="video-profile" type="s">
+      <default>'mp4'</default>
+      <summary>Default video output profile ID</summary>
+    </key>
+
+    <key name="audio-profile" type="s">
+      <default>'opus'</default>
+      <summary>Default audio output profile ID</summary>
+    </key>
+
+    <key name="framerate" type="u">
+      <range min="1" max="60"/>
+      <default>30</default>
+      <summary>Video capture framerate</summary>
+    </key>
+
+    <key name="capture-cursor" type="b">
+      <default>true</default>
+      <summary>Show cursor in recordings</summary>
+    </key>
+
+    <key name="timer-delay" type="u">
+      <range min="0" max="10"/>
+      <default>0</default>
+      <summary>Countdown timer in seconds before capture</summary>
+    </key>
+
+    <key name="notify-on-complete" type="b">
+      <default>true</default>
+      <summary>Send desktop notification when capture is saved</summary>
+    </key>
+
+    <key name="ask-save-name" type="b">
+      <default>false</default>
+      <summary>Ask for filename after capture</summary>
+      <description>Show a Save As dialog after each capture to rename or relocate the file.</description>
+    </key>
+
+    <key name="copy-to-clipboard" type="b">
+      <default>true</default>
+      <summary>Copy captured images to the clipboard</summary>
+    </key>
+
+    <key name="capture-mode" type="s">
+      <choices>
+        <choice value="image"/>
+        <choice value="video"/>
+        <choice value="audio"/>
+      </choices>
+      <default>'image'</default>
+      <summary>Last used capture mode</summary>
+    </key>
+
+    <key name="capture-scope" type="s">
+      <choices>
+        <choice value="fullscreen"/>
+        <choice value="region"/>
+        <choice value="window"/>
+      </choices>
+      <default>'fullscreen'</default>
+      <summary>Last used capture scope</summary>
+    </key>
+
+    <key name="audio-source" type="s">
+      <choices>
+        <choice value="desktop"/>
+        <choice value="microphone"/>
+        <choice value="both"/>
+        <choice value="none"/>
+      </choices>
+      <default>'desktop'</default>
+      <summary>Audio source for video recording</summary>
+    </key>
+
+    <key name="bar-x" type="i">
+      <default>-1</default>
+      <summary>Recording bar X position (-1 = auto)</summary>
+    </key>
+
+    <key name="bar-y" type="i">
+      <default>-1</default>
+      <summary>Recording bar Y position (-1 = auto)</summary>
+    </key>
+
+    <key name="portal-token" type="s">
+      <default>''</default>
+      <summary>xdg-desktop-portal screencast restore token</summary>
+      <description>Cached restore token avoids repeated compositor permission dialogs. Cleared on schema reset.</description>
+    </key>
+
+  </schema>
+</schemalist>

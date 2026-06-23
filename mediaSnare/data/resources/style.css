@@ -1,0 +1,91 @@
+/* mediaSnare — application stylesheet
+ * Loaded from GResource at startup — single source of truth for all CSS.
+ *
+ * Lean Linux dark theme progressbar workaround:
+ * libadwaita 1.4+ compiles progressbar styles into the binary.
+ * LAYOUT_CSS override required per lean-color-swap-directive-v1 Section 8.
+ * Hardcoded hex values here are intentional — do not replace with tokens.
+ */
+
+/* ── Lean Linux dark theme progressbar override ───────────────────────────── */
+
+progressbar > trough > progress {
+    background-color: #4b8bd4;
+    background-image: linear-gradient(to bottom, #6baad4, #3d7ab5);
+    border: 1px solid #1f3a6e;
+    border-radius: 3px;
+}
+
+progressbar > trough > progress:hover {
+    background-color: #3d7ab5;
+    background-image: linear-gradient(to bottom, #5a9fd4, #2d5a9e);
+}
+
+/* ── Side tab bar ─────────────────────────────────────────────────────────── */
+
+.sidebar {
+    background-color: @sidebar_bg_color;
+    border-right: 1px solid @borders;
+}
+
+.tab-button {
+    border-radius: 8px;
+    padding: 8px 4px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    min-width: 56px;
+    min-height: 56px;
+    transition: background-color 150ms ease;
+}
+
+.tab-button:hover {
+    background-color: rgba(75, 139, 212, 0.15);
+}
+
+.tab-button:active,
+.tab-button:checked {
+    background-color: rgba(75, 139, 212, 0.30);
+    color: @accent_color;
+}
+
+.tab-label {
+    font-size: 10px;
+}
+
+/* ── Recording state ──────────────────────────────────────────────────────── */
+
+.recording-dot {
+    color: #e35d4f;
+}
+
+/* ── Controls area ────────────────────────────────────────────────────────── */
+
+.dim-label {
+    opacity: 0.65;
+    font-size: 13px;
+}
+
+.numeric {
+    font-variant-numeric: tabular-nums;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ── Sidebar preferences button ───────────────────────────────────────────── */
+
+.sidebar button.flat image {
+    color: #4b8bd4;
+}
+
+.sidebar button.flat:hover {
+    background-color: rgba(75, 139, 212, 0.15);
+}
+
+/* ── Headerbar close / minimize buttons ───────────────────────────────────── */
+
+headerbar button.close image,
+headerbar button.minimize image {
+    color: #4b8bd4;
+}

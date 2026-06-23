@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/org/archerprojects/mediaSnare">
+    <file>style.css</file>
+    <file>profiles.toml</file>
+    <file>icons/scalable/actions/mediasnare-settings-symbolic.svg</file>
+  </gresource>
+</gresources>

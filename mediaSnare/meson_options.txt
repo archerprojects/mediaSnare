@@ -1,0 +1,2 @@
+# mediaSnare meson options
+# buildtype is a Meson built-in — use: meson setup _build --buildtype=release

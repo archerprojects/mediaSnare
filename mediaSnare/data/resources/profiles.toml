@@ -1,0 +1,88 @@
+# mediaSnare GStreamer output profiles
+# videoenc and audioenc connect directly to muxer
+# ${N_THREADS} replaced at runtime with detected core count
+# vaapi profile shown only when vah264enc element available
+
+[[video]]
+id          = "mp4"
+name        = "MP4"
+extension   = "mp4"
+videoenc    = """
+  videoconvert chroma-mode=none dither=none matrix-mode=output-only n-threads=${N_THREADS} !
+  x264enc qp-max=17 speed-preset=ultrafast threads=${N_THREADS} !
+  capsfilter caps=video/x-h264,profile=baseline !
+  queue !
+  h264parse"""
+audioenc    = """
+  audioconvert !
+  lamemp3enc !
+  queue !
+  mpegaudioparse"""
+muxer       = "mp4mux fragment-duration=500 fragment-mode=first-moov-then-finalise"
+
+[[video]]
+id          = "mkv"
+name        = "MKV"
+extension   = "mkv"
+videoenc    = """
+  videoconvert chroma-mode=none dither=none matrix-mode=output-only n-threads=${N_THREADS} !
+  x264enc qp-max=17 speed-preset=ultrafast threads=${N_THREADS} !
+  capsfilter caps=video/x-h264,profile=baseline !
+  queue !
+  h264parse"""
+audioenc    = """
+  audioconvert !
+  opusenc !
+  queue"""
+muxer       = "matroskamux"
+
+[[video]]
+id          = "webm-vp8"
+name        = "WebM"
+extension   = "webm"
+videoenc    = """
+  videoconvert chroma-mode=none dither=none matrix-mode=output-only n-threads=${N_THREADS} !
+  vp8enc max-quantizer=17 cpu-used=16 deadline=1 static-threshold=100 keyframe-mode=disabled buffer-size=20000 threads=${N_THREADS} !
+  queue"""
+audioenc    = """
+  audioconvert !
+  opusenc !
+  queue"""
+muxer       = "webmmux"
+
+[[video]]
+id          = "va-h264"
+name        = "MP4 (GPU)"
+extension   = "mp4"
+vaapi       = true
+videoenc    = """
+  vapostproc !
+  vah264enc !
+  queue !
+  h264parse"""
+audioenc    = """
+  audioconvert !
+  lamemp3enc !
+  queue !
+  mpegaudioparse"""
+muxer       = "mp4mux fragment-duration=500 fragment-mode=first-moov-then-finalise"
+
+[[audio]]
+id        = "opus"
+name      = "OGG / Opus"
+extension = "ogg"
+audioenc  = """
+  audioconvert !
+  opusenc !
+  queue"""
+muxer     = "oggmux"
+
+[[audio]]
+id        = "mp3"
+name      = "MP3"
+extension = "mp3"
+audioenc  = """
+  audioconvert !
+  lamemp3enc !
+  queue"""
+muxer     = ""

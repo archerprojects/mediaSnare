@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=mediaSnare
+GenericName=Screen Capture
+Comment=Capture screen, video, and audio
+Exec=mediasnare %f
+Icon=mediasnare
+Terminal=false
+Type=Application
+Categories=X-LEAN-Tools;AudioVideo;Video;Audio;Recorder;
+Keywords=screenshot;screencast;record;capture;audio;video;
+StartupNotify=false
+MimeType=image/png;image/jpeg;image/webp;

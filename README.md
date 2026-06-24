@@ -7,8 +7,19 @@ still image capture, screen recording with audio, and standalone audio
 recording from a minimal GTK4 interface. X11 primary, Wayland ready
 via PipeWire when desktop portal backends are available.
 
-Developed for [Lean Linux](https://github.com/archerprojects) by
-[archerprojects](mailto:archer.projects@proton.me).
+---
+
+**Developer**
+
+```
+Developed for Lean Linux by:
+archerprojects
+archer.projects@proton.me
+https://github.com/archerprojects/mediaSnare
+```
+
+Developed for Lean Linux. Not exclusive to Lean Linux — runs on any standard
+Linux desktop.
 
 ---
 
@@ -114,7 +125,4 @@ Settings stored via GSettings under `org.archerprojects.mediaSnare`.
 
 GPL-3.0-or-later. See [LICENSE](LICENSE).
 
----
-
-Developed for Lean Linux by archerprojects (archer.projects@proton.me)
-https://github.com/archerprojects/mediaSnare
+Copyright (C) 2026 archerprojects (archer.projects@proton.me)

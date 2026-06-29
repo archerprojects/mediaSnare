@@ -7,27 +7,8 @@ still image capture, screen recording with audio, and standalone audio
 recording from a minimal GTK4 interface. X11 primary, Wayland ready
 via PipeWire when desktop portal backends are available.
 
----
-
-**Developer**
-
-```
-Developed for Lean Linux by:
-archerprojects
-archer.projects@proton.me
-https://github.com/archerprojects/mediaSnare
-```
-
-Developed for Lean Linux. Not exclusive to Lean Linux — runs on any standard
-Linux desktop.
-
----
-
-## Screenshots
-
-| Image | Video | Audio |
-|---|---|---|
-| ![Image capture](screenshots/mediaSnare_image.png) | ![Video capture](screenshots/mediaSnare_video.png) | ![Audio capture](screenshots/mediaSnare_audio.png) |
+Developed for [Lean Linux](https://github.com/archerprojects) by
+[archerprojects](mailto:archer.projects@proton.me).
 
 ---
 
@@ -100,10 +81,10 @@ meson setup --wipe _build && ninja -C _build && bash build-aux/build-deb.sh _bui
 
 The .deb is written to `dist/`.
 
-Install manually:
+Install (resolves dependencies):
 
 ```bash
-sudo dpkg -i "$(ls -t dist/mediasnare_*.deb | head -1)"
+sudo apt install ./dist/mediasnare_1.0.0_amd64.deb
 ```
 
 ---
@@ -125,4 +106,7 @@ Settings stored via GSettings under `org.archerprojects.mediaSnare`.
 
 GPL-3.0-or-later. See [LICENSE](LICENSE).
 
-Copyright (C) 2026 archerprojects (archer.projects@proton.me)
+---
+
+Developed for Lean Linux by archerprojects (archer.projects@proton.me)
+https://github.com/archerprojects/mediaSnare

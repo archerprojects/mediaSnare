@@ -84,7 +84,7 @@ The .deb is written to `dist/`.
 Install (resolves dependencies):
 
 ```bash
-sudo apt install ./dist/mediasnare_1.0.0_amd64.deb
+sudo apt install ./dist/mediasnare_1.0.1_amd64.deb
 ```
 
 ---

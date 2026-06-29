@@ -1,6 +1,6 @@
 [package]
 name = "mediasnare"
-version = "1.0.0"
+version = "1.0.1"
 authors = ["archerprojects <archer.projects@proton.me>"]
 license = "GPL-3.0-or-later"
 edition = "2021"
